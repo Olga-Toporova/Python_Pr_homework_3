@@ -12,18 +12,14 @@ out
 5 -3 2 -1 1 0 1 1 2 3 5
 '''
 
+
 def fibonachi(number):
     fib1, fib2 = 1, 1
-    fibonachi1 = [-1, 1, 0, fib1, fib2]
-    for i in range(number-2):
+    fibonachi1 = [0]
+    for i in range(number):
+        fibonachi1.append(fib1)
+        fibonachi1.insert(0, fib1* (-1) ** i)
         fib1, fib2 = fib2, fib1 + fib2
-        fibonachi1.append(fib2)
-        if i % 2 != 0:
-            fib3 = fib2 * -1
-            fibonachi1.insert(0, fib3)
-        else:
-            fibonachi1.insert(0, fib2)
-
     print(fibonachi1)
 
 
