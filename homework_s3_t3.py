@@ -18,11 +18,10 @@ def turn_into_number(num):
 
     while num > 0:
         to_binary = num % 2
-        result.append(to_binary)
+        result.insert(0, to_binary)
         num //= 2
-        reverse_result = result[::-1]
-    return reverse_result
+    print(*result, sep = '')
 
 
 number = int(input("Введите число: "))
-print(turn_into_number(number))
+turn_into_number(number)
